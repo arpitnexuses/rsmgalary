@@ -178,11 +178,11 @@ function App() {
                       className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105"
                     />
                     {/* Overlay with gradient background */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent p-4 text-center">
-                      <h3 className="text-xl font-bold text-white mb-2 line-clamp-1 text-center">
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent p-4">
+                      <h3 className="text-xl font-bold text-white mb-2 line-clamp-1">
                         {album.title}
                       </h3>
-                      <p className="text-white/90 text-sm line-clamp-2 text-center">
+                      <p className="text-white/90 text-sm line-clamp-2">
                         {album.description}
                       </p>
                     </div>
