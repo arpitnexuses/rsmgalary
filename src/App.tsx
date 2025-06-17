@@ -158,7 +158,7 @@ function App() {
   return (
     <div className="min-h-screen bg-[white] p-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-[#0095D5] mb-14 mt-5 text-center">RSM Gallery</h1>
+        <h1 className="text-3xl font-bold text-[#0095D5] mb-14 mt-5 text-center">RSM Albazie & Co.</h1>
         
         {!selectedAlbum ? (
           <div className="relative">
