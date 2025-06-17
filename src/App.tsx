@@ -12,11 +12,11 @@ interface Album {
 const albums: Album[] = [
   {
     id: 1,
-    title: "Feeding with a purpose",
-    description: "Making a difference in our community",
-    coverImage: "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/don%205.jpg",
+    title: "Team Building & Social Events",
+    description: "",
+    coverImage: "https://cdn-nexlink.s3.us-east-2.amazonaws.com/Frame_42_9683d323-532b-4586-a06a-57d36a7f2694.png",
     images: [
-      "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/don%205.jpg",
+      "https://cdn-nexlink.s3.us-east-2.amazonaws.com/Frame_42_9683d323-532b-4586-a06a-57d36a7f2694.png",
       "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d",
       "https://images.unsplash.com/photo-1433086966358-54859d0ed716",
       "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07"
@@ -24,11 +24,11 @@ const albums: Album[] = [
   },
   {
     id: 2,
-    title: "Employee's Family Success Celebration",
-    description: "Celebrating our achievements together",
-    coverImage: "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/Image%20(97).jpg",
+    title: "Learning & Development",
+    description: "",
+    coverImage: "https://cdn-nexlink.s3.us-east-2.amazonaws.com/Frame_9_37458723-b4ac-4765-932a-cf15661e4a0f.png",
     images: [
-      "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/Image%20(97).jpg",
+      "https://cdn-nexlink.s3.us-east-2.amazonaws.com/Frame_9_37458723-b4ac-4765-932a-cf15661e4a0f.png",
       "https://images.unsplash.com/photo-1444723121867-7a241cacace9",
       "https://images.unsplash.com/photo-1465447142348-e9952c393450",
       "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df"
@@ -36,11 +36,11 @@ const albums: Album[] = [
   },
   {
     id: 3,
-    title: "Padel Tournament",
-    description: "Competitive spirit and team building",
-    coverImage: "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/Z98B3652%20(1).jpg",
+    title: "Health & Wellness",
+    description: "",
+    coverImage: "https://cdn-nexlink.s3.us-east-2.amazonaws.com/Frame_38_8f713521-ede6-42ae-81d1-f6c7dfe67f09.png",
     images: [
-      "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/Z98B3652%20(1).jpg",
+      "https://cdn-nexlink.s3.us-east-2.amazonaws.com/Frame_38_8f713521-ede6-42ae-81d1-f6c7dfe67f09.png",
       "https://images.unsplash.com/photo-1507908708918-778587c9e563",
       "https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8",
       "https://images.unsplash.com/photo-1506792006437-256b665541e2"
@@ -48,11 +48,11 @@ const albums: Album[] = [
   },
   {
     id: 4,
-    title: "Feeding with a purpose",
-    description: "Supporting our local community",
-    coverImage: "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/don%205.jpg",
+    title: "CSR & Volunteering",
+    description: "",
+    coverImage: "https://cdn-nexlink.s3.us-east-2.amazonaws.com/Frame_36_5b4f3142-3809-4372-89d6-b1c2ee596451.png",
     images: [
-      "https://22527425.fs1.hubspotusercontent-na1.net/hubfs/22527425/don%205.jpg",
+      "https://cdn-nexlink.s3.us-east-2.amazonaws.com/Frame_36_5b4f3142-3809-4372-89d6-b1c2ee596451.png",
       "https://images.unsplash.com/photo-1494122353634-c310f45a6d3c",
       "https://images.unsplash.com/photo-1534766555764-ce878a5e3a2b",
       "https://images.unsplash.com/photo-1498574932731-e711f7092dda"
@@ -177,15 +177,23 @@ function App() {
                       alt={album.title}
                       className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105"
                     />
-                    {/* Overlay with gradient background */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent p-4">
-                      <h3 className="text-xl font-bold text-white mb-2 line-clamp-1">
-                        {album.title}
-                      </h3>
-                      <p className="text-white/90 text-sm line-clamp-2">
-                        {album.description}
-                      </p>
-                    </div>
+                    {/* Overlay with gradient background for albums with id > 4 */}
+                    {album.id > 4 ? (
+                      <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent p-4">
+                        <h3 className="text-xl font-bold text-white mb-2 line-clamp-1">
+                          {album.title}
+                        </h3>
+                        <p className="text-white/90 text-sm line-clamp-2">
+                          {album.description}
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="absolute inset-0 p-4">
+                        <h3 className="text-xl font-bold text-white mb-2 line-clamp-1">
+                          {album.title}
+                        </h3>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
